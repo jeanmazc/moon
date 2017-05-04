@@ -18,8 +18,8 @@ var AuthService = (function () {
         this.mostrarMenuEmitter = new core_1.EventEmitter();
     }
     AuthService.prototype.fazerLogin = function (usuario) {
-        if (usuario.nome === 'usuario@email.com' &&
-            usuario.senha === '123456') {
+        if (usuario.nome !== '' &&
+            usuario.senha !== '') {
             this.usuarioAutenticado = true;
             this.mostrarMenuEmitter.emit(true);
             this.router.navigate(['/']);
