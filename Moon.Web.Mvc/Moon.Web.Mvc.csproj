@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6F661A9-D8F7-4E12-AFBB-EB3810371B02}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moon</RootNamespace>
+    <AssemblyName>Moon</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src_modulo_01\app\app.component.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="package.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="src_modulo_01\app\primeiro-projeto\segundo-component\segundo.component.css" />
+    <Content Include="src_modulo_01\app\primeiro-projeto\segundo-component\segundo.component.html" />
+    <Content Include="src_modulo_01\app\segundo-projeto\curso\curso-detalhe\curso-detalhe.component.css" />
+    <Content Include="src_modulo_01\app\segundo-projeto\curso\curso-detalhe\curso-detalhe.component.html" />
+    <Content Include="src_modulo_01\app\segundo-projeto\curso\cursos.component.css" />
+    <Content Include="src_modulo_01\app\segundo-projeto\curso\cursos.component.html" />
+    <Content Include="src_modulo_01\favicon.ico" />
+    <Content Include="src_modulo_01\styles.css" />
+    <Content Include="src_modulo_02_data_binding\app\app.component.css" />
+    <Content Include="src_modulo_02_data_binding\app\app.component.html" />
+    <Content Include="src_modulo_02_data_binding\app\ciclo\ciclo.component.css" />
+    <Content Include="src_modulo_02_data_binding\app\ciclo\ciclo.component.html" />
+    <Content Include="src_modulo_02_data_binding\app\data-binding\data-binding.component.css" />
+    <Content Include="src_modulo_02_data_binding\app\data-binding\data-binding.component.html" />
+    <Content Include="src_modulo_02_data_binding\app\input-property\input-property.component.css" />
+    <Content Include="src_modulo_02_data_binding\app\input-property\input-property.component.html" />
+    <Content Include="src_modulo_02_data_binding\app\meu-form\meu-form.component.css" />
+    <Content Include="src_modulo_02_data_binding\app\meu-form\meu-form.component.html" />
+    <Content Include="src_modulo_02_data_binding\app\output-property\output-property.component.css" />
+    <Content Include="src_modulo_02_data_binding\app\output-property\output-property.component.html" />
+    <Content Include="src_modulo_02_data_binding\app\styles.css" />
+    <Content Include="src_modulo_02_data_binding\favicon.ico" />
+    <Content Include="src_modulo_02_data_binding\styles.css" />
+    <Content Include="src_modulo_03_directivas\app\app.component.css" />
+    <Content Include="src_modulo_03_directivas\app\app.component.html" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngclass\diretiva-ngclass.component.css" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngclass\diretiva-ngclass.component.html" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngfor\diretiva-ngfor.component.css" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngfor\diretiva-ngfor.component.html" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngif\diretiva-ngif.component.css" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngif\diretiva-ngif.component.html" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngstyle\diretiva-ngstyle.component.css" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngstyle\diretiva-ngstyle.component.html" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngswitch\diretiva-ngswitch.component.css" />
+    <Content Include="src_modulo_03_directivas\app\diretiva-ngswitch\diretiva-ngswitch.component.html" />
+    <Content Include="src_modulo_03_directivas\app\diretivas-customizadas\diretivas-customizadas.component.css" />
+    <Content Include="src_modulo_03_directivas\app\diretivas-customizadas\diretivas-customizadas.component.html" />
+    <Content Include="src_modulo_03_directivas\app\exemplo-ng-content\exemplo-ng-content.component.css" />
+    <Content Include="src_modulo_03_directivas\app\exemplo-ng-content\exemplo-ng-content.component.html" />
+    <Content Include="src_modulo_03_directivas\app\operador-elvis\operador-elvis.component.css" />
+    <Content Include="src_modulo_03_directivas\app\operador-elvis\operador-elvis.component.html" />
+    <Content Include="src_modulo_03_directivas\app\styles.css" />
+    <Content Include="src_modulo_03_directivas\favicon.ico" />
+    <Content Include="src_modulo_03_directivas\styles.css" />
+    <Content Include="src_modulo_04_servicos\app\app.component.css" />
+    <Content Include="src_modulo_04_servicos\app\app.component.html" />
+    <Content Include="src_modulo_04_servicos\app\criar-curso\criar-curso.component.css" />
+    <Content Include="src_modulo_04_servicos\app\criar-curso\criar-curso.component.html" />
+    <Content Include="src_modulo_04_servicos\app\cursos\cursos.component.css" />
+    <Content Include="src_modulo_04_servicos\app\cursos\cursos.component.html" />
+    <Content Include="src_modulo_04_servicos\app\receber-curso-criado\receber-curso-criado.component.css" />
+    <Content Include="src_modulo_04_servicos\app\receber-curso-criado\receber-curso-criado.component.html" />
+    <Content Include="src_modulo_04_servicos\favicon.ico" />
+    <Content Include="src_modulo_04_servicos\styles.css" />
+    <Content Include="src_modulo_05_pipes\app\app.component.css" />
+    <Content Include="src_modulo_05_pipes\app\app.component.html" />
+    <Content Include="src_modulo_05_pipes\app\exemplos-pipes\exemplos-pipes.component.css" />
+    <Content Include="src_modulo_05_pipes\app\exemplos-pipes\exemplos-pipes.component.html" />
+    <Content Include="src_modulo_05_pipes\favicon.ico" />
+    <Content Include="src_modulo_05_pipes\styles.css" />
+    <Content Include="src_modulo_06_rotas\app\alunos\aluno-detalhe\aluno-detalhe.component.css" />
+    <Content Include="src_modulo_06_rotas\app\alunos\aluno-detalhe\aluno-detalhe.component.html" />
+    <Content Include="src_modulo_06_rotas\app\alunos\aluno-form\aluno-form.component.css" />
+    <Content Include="src_modulo_06_rotas\app\alunos\aluno-form\aluno-form.component.html" />
+    <Content Include="src_modulo_06_rotas\app\alunos\alunos.component.css" />
+    <Content Include="src_modulo_06_rotas\app\alunos\alunos.component.html" />
+    <Content Include="src_modulo_06_rotas\app\app.component.css" />
+    <Content Include="src_modulo_06_rotas\app\app.component.html" />
+    <Content Include="src_modulo_06_rotas\app\cursos\curso-detalhe\curso-detalhe.component.css" />
+    <Content Include="src_modulo_06_rotas\app\cursos\curso-detalhe\curso-detalhe.component.html" />
+    <Content Include="src_modulo_06_rotas\app\cursos\curso-form\curso-form.component.css" />
+    <Content Include="src_modulo_06_rotas\app\cursos\curso-form\curso-form.component.html" />
+    <Content Include="src_modulo_06_rotas\app\cursos\curso-nao-encontrado\curso-nao-encontrado.component.css" />
+    <Content Include="src_modulo_06_rotas\app\cursos\curso-nao-encontrado\curso-nao-encontrado.component.html" />
+    <Content Include="src_modulo_06_rotas\app\cursos\cursos.component.css" />
+    <Content Include="src_modulo_06_rotas\app\cursos\cursos.component.html" />
+    <Content Include="src_modulo_06_rotas\app\home\home.component.css" />
+    <Content Include="src_modulo_06_rotas\app\home\home.component.html" />
+    <Content Include="src_modulo_06_rotas\app\login\login.component.css" />
+    <Content Include="src_modulo_06_rotas\app\login\login.component.html" />
+    <Content Include="src_modulo_06_rotas\app\pagina-nao-encontrada\pagina-nao-encontrada.component.css" />
+    <Content Include="src_modulo_06_rotas\app\pagina-nao-encontrada\pagina-nao-encontrada.component.html" />
+    <Content Include="src_modulo_06_rotas\favicon.ico" />
+    <Content Include="src_modulo_06_rotas\styles.css" />
+    <Content Include="src_modulo_07_forms\app\app.component.css" />
+    <Content Include="src_modulo_07_forms\app\app.component.html" />
+    <Content Include="src_modulo_07_forms\app\data-form\data-form.component.css" />
+    <Content Include="src_modulo_07_forms\app\data-form\data-form.component.html" />
+    <Content Include="src_modulo_07_forms\app\form-debug\form-debug.component.css" />
+    <Content Include="src_modulo_07_forms\app\form-debug\form-debug.component.html" />
+    <Content Include="src_modulo_07_forms\app\template-form\template-form.component.css" />
+    <Content Include="src_modulo_07_forms\app\template-form\template-form.component.html" />
+    <Content Include="src_modulo_07_forms\favicon.ico" />
+    <Content Include="src_modulo_07_forms\styles.css" />
+    <Content Include="styles.css" />
+    <Content Include="systemjs.config.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="src_modulo_06_rotas\tsconfig.app.json" />
+    <Content Include="src_modulo_07_forms\tsconfig.app.json" />
+    <Content Include="src_modulo_05_pipes\tsconfig.app.json" />
+    <Content Include="src_modulo_04_servicos\tsconfig.app.json" />
+    <Content Include="src_modulo_03_directivas\tsconfig.app.json" />
+    <Content Include="src_modulo_02_data_binding\tsconfig.app.json" />
+    <Content Include="src_modulo_01\tsconfig.app.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src_modulo_01\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\environments\environment.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\primeiro-projeto\primeiro-component\primeiro.component.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\primeiro-projeto\segundo-component\segundo.component.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\segundo-projeto\curso\curso-detalhe\curso-detalhe.component.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\segundo-projeto\curso\cursos.component.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\segundo-projeto\curso\cursos.module.ts" />
+    <TypeScriptCompile Include="src_modulo_01\app\segundo-projeto\curso\cursos.service.ts" />
+    <TypeScriptCompile Include="src_modulo_01\polyfills.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\ciclo\ciclo.component.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\data-binding\data-binding.component.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\input-property\input-property.component.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\meu-form\meu-form.component.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\meu-form\meu-form.module.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\output-property\output-property.component.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_02_data_binding\polyfills.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\diretiva-ngclass\diretiva-ngclass.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\diretiva-ngfor\diretiva-ngfor.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\diretiva-ngif\diretiva-ngif.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\diretiva-ngstyle\diretiva-ngstyle.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\diretiva-ngswitch\diretiva-ngswitch.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\diretivas-customizadas\diretivas-customizadas.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\environments\environment.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\exemplo-ng-content\exemplo-ng-content.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\operador-elvis\operador-elvis.component.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\shared\fundo-amarelo.directive.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\shared\highlight-mouse.directive.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\shared\highlight.directive.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\app\shared\ng-else.directive.ts" />
+    <TypeScriptCompile Include="src_modulo_03_directivas\polyfills.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\criar-curso\criar-curso.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\criar-curso\criar-curso.component.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\criar-curso\criar-curso.module.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\cursos\cursos.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\cursos\cursos.component.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\cursos\cursos.module.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\cursos\cursos.service.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\environments\environment.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\receber-curso-criado\receber-curso-criado.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\receber-curso-criado\receber-curso-criado.component.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\shared\log.service.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\app\shared\log.service.ts" />
+    <TypeScriptCompile Include="src_modulo_04_servicos\polyfills.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\camel-case.pipe.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\camel-case.pipe.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\exemplos-pipes\exemplos-pipes.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\exemplos-pipes\exemplos-pipes.component.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\filtro-array-impuro.pipe.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\filtro-array-impuro.pipe.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\filtro-array.pipe.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\filtro-array.pipe.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\settings.service.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\settings.service.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\app\environments\environment.ts" />
+    <TypeScriptCompile Include="src_modulo_05_pipes\polyfills.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\aluno-detalhe\aluno-detalhe.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\aluno-detalhe\aluno-detalhe.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\aluno-form\aluno-form.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\aluno-form\aluno-form.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\aluno.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\alunos.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\alunos.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\alunos.module.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\alunos.routing.module.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\alunos.service.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\alunos.service.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\alunos\guards\aluno-detalhe.resolver.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\app.routing.module.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\app.routing.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\curso-detalhe\curso-detalhe.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\curso-detalhe\curso-detalhe.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\curso-form\curso-form.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\curso-form\curso-form.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\curso-nao-encontrado\curso-nao-encontrado.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\curso-nao-encontrado\curso-nao-encontrado.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\cursos.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\cursos.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\cursos.module.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\cursos.routing.module.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\cursos.service.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\cursos\cursos.service.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\environments\environment.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\guards\alunos-deactivate.guard.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\guards\alunos.guard.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\guards\auth.guard.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\guards\cursos.guard.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\guards\iform-candeactivate.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\home\home.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\login\auth.service.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\login\auth.service.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\login\usuario.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\pagina-nao-encontrada\pagina-nao-encontrada.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\app\pagina-nao-encontrada\pagina-nao-encontrada.component.ts" />
+    <TypeScriptCompile Include="src_modulo_06_rotas\polyfills.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\app.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\app.module.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\data-form\data-form.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\data-form\data-form.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\environments\environment.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\form-debug\form-debug.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\form-debug\form-debug.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\template-form\template-form.component.spec.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\template-form\template-form.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\template-form\template-form.module.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\polyfills.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27923</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Moon</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

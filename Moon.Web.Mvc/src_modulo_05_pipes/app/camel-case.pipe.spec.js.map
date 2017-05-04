@@ -1,0 +1,1 @@
+{"version":3,"file":"camel-case.pipe.spec.js","sourceRoot":"","sources":["camel-case.pipe.spec.ts"],"names":[],"mappings":"AAAA,uCAAuC;;;AAGvC,qDAAkD;AAElD,QAAQ,CAAC,iBAAiB,EAAE;IAC1B,EAAE,CAAC,oBAAoB,EAAE;QACvB,IAAI,IAAI,GAAG,IAAI,+BAAa,EAAE,CAAC;QAC/B,MAAM,CAAC,IAAI,CAAC,CAAC,UAAU,EAAE,CAAC;IAC5B,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC"}
