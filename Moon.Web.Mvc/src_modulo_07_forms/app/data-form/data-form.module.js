@@ -7,22 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var shared_module_1 = require("./../shared/shared.module");
-var template_form_component_1 = require("./template-form.component");
+var data_form_component_1 = require("./data-form.component");
 var core_1 = require("@angular/core");
-var TemplateFormModule = (function () {
-    function TemplateFormModule() {
+var DataFormModule = (function () {
+    function DataFormModule() {
     }
-    return TemplateFormModule;
+    return DataFormModule;
 }());
-TemplateFormModule = __decorate([
+DataFormModule = __decorate([
     core_1.NgModule({
         imports: [
             shared_module_1.SharedModule
         ],
         declarations: [
-            template_form_component_1.TemplateFormComponent
+            data_form_component_1.DataFormComponent
         ]
     })
-], TemplateFormModule);
-exports.TemplateFormModule = TemplateFormModule;
-//# sourceMappingURL=template-form.module.js.map
+], DataFormModule);
+exports.DataFormModule = DataFormModule;
+//# sourceMappingURL=data-form.module.js.map

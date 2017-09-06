@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var data_form_module_1 = require("./data-form/data-form.module");
 var template_form_module_1 = require("./template-form/template-form.module");
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
@@ -13,7 +14,6 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
-var data_form_component_1 = require("./data-form/data-form.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,15 +22,16 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         declarations: [
-            app_component_1.AppComponent,
-            data_form_component_1.DataFormComponent
+            app_component_1.AppComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
+            forms_1.ReactiveFormsModule,
             http_1.HttpModule,
             app_routing_module_1.AppRoutingModule,
-            template_form_module_1.TemplateFormModule
+            template_form_module_1.TemplateFormModule,
+            data_form_module_1.DataFormModule
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]

@@ -13,7 +13,7 @@ var router_1 = require("@angular/router");
 var routes = [
     { path: 'templateForm', component: template_form_component_1.TemplateFormComponent },
     { path: 'dataForm', component: data_form_component_1.DataFormComponent },
-    { path: 'Moon', pathMatch: 'full', redirectTo: 'templateForm' }
+    { path: '', pathMatch: 'full', redirectTo: 'dataForm' }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

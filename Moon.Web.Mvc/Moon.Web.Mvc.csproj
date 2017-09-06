@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -320,6 +321,10 @@
     <Content Include="src_modulo_07_forms\app\data-form\data-form.component.html" />
     <Content Include="src_modulo_07_forms\app\form-debug\form-debug.component.css" />
     <Content Include="src_modulo_07_forms\app\form-debug\form-debug.component.html" />
+    <Content Include="src_modulo_07_forms\app\shared\campo-control-erro\campo-control-erro.component.css" />
+    <Content Include="src_modulo_07_forms\app\shared\campo-control-erro\campo-control-erro.component.html" />
+    <Content Include="src_modulo_07_forms\app\shared\form-debug\form-debug.component.css" />
+    <Content Include="src_modulo_07_forms\app\shared\form-debug\form-debug.component.html" />
     <Content Include="src_modulo_07_forms\app\template-form\template-form.component.css" />
     <Content Include="src_modulo_07_forms\app\template-form\template-form.component.html" />
     <Content Include="src_modulo_07_forms\favicon.ico" />
@@ -488,11 +493,18 @@
     <TypeScriptCompile Include="src_modulo_07_forms\app\app.module.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\data-form\data-form.component.spec.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\data-form\data-form.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\data-form\data-form.module.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\environments\environment.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\form-debug\form-debug.component.spec.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\form-debug\form-debug.component.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\main.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\shared\campo-control-erro\campo-control-erro.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\shared\form-debug\form-debug.component.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\shared\models\estado-br.model.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\shared\services\consulta-cep.service.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\shared\services\dropdown.service.ts" />
+    <TypeScriptCompile Include="src_modulo_07_forms\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\template-form\template-form.component.spec.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\template-form\template-form.component.ts" />
     <TypeScriptCompile Include="src_modulo_07_forms\app\template-form\template-form.module.ts" />

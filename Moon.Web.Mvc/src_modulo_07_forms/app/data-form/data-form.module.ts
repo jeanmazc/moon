@@ -1,5 +1,5 @@
 import { SharedModule } from './../shared/shared.module';
-import { TemplateFormComponent } from './template-form.component';
+import { DataFormComponent } from './data-form.component';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
     SharedModule
   ],
   declarations: [
-    TemplateFormComponent
+    DataFormComponent
   ]
 })
-export class TemplateFormModule { }
+export class DataFormModule { }
